@@ -80,7 +80,7 @@ zcta_tract <- read.csv("https://www2.census.gov/geo/docs/maps-data/data/rel/zcta
       zcta_tract$STATE_ <- fips_codes[match(zcta_tract$st, fips_codes$state_code)]
       
     zcta_tract %>% 
-    select(TRACT) # for tract
+    select(STATE_) # for tract
   
 ## left off here looking at data values
 
@@ -89,16 +89,3 @@ zcta_tract <- read.csv("https://www2.census.gov/geo/docs/maps-data/data/rel/zcta
 
 
 #### DATA CHECK
-
-
-  
-  nps = c(-1, 0, 1, 1, 0, 1, 1, -1)
-  
-  var_lab(nps) = "Net promoter score"
-  
-  val_lab(nps) = num_lab("
-            -1 Detractors
-             0 Neutralists    
-             1 Promoters
-             99 Hard to say
-")
