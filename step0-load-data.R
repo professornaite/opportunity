@@ -70,21 +70,27 @@ zcta_tract <- read.csv("https://www2.census.gov/geo/docs/maps-data/data/rel/zcta
   zcta_tract %>% 
     count(STATE) # for state
       # read in state FIPS codes 
-      fips_codes
+      fips_codes # contains state, state_code, state_name, county_code, and county
       str(fips_codes) # check the structure of the data
       fips_codes <- as.tibble(fips_codes) # transform data frame to a tibble
       # add FIPS codes to zcta_tract
       fips_codes$state_code <- as.numeric(fips_codes$state_code) # transform state codes to numeric
+      fips_codes$county_code <- as.numeric(fips_codes$county_code)
+      str(fips_codes)
       
-      # add state FIPS code to the state zcta_tract df
-      zcta_tract$STATE_ <- fips_codes[match(zcta_tract$st, fips_codes$state_code)]
-      
-    zcta_tract %>% 
-    select(STATE_) # for tract
+      # merging the data frames by county codes
+      zcta_tract # check zcta frame; take note: 
+      fips_codes
+      df <- merge(zcta_tract, fips_codes, by.x = "COUNTY", by.y = "county_code")
+      str(df)
+      df %>% 
+        relocate(ZCTA5, state_name, state_code, county, COUNTY) -> df
+      head(df)
+      tail(df)
   
-## left off here looking at data values
 
-    
+      ## information on geoids: https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html
+
 #### CLEANING
 
 
