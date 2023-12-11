@@ -1,5 +1,6 @@
 ## Percentage distribution of household income in the United States in 2022, by race and ethnicity 
-# https://www.statista.com/statistics/203207/percentage-distribution-of-household-income-in-the-us-by-ethnic-group/
+
+# source: https://www.statista.com/statistics/203207/percentage-distribution-of-household-income-in-the-us-by-ethnic-group/
 # note: raw data required an account
 
 r1 <- c("Annual household income in U.S. dollars", "White alone, not Hispanic",	"Black alone", "Asian alone", "Hispanic (any race)", "American Indian and Alaska Native")
