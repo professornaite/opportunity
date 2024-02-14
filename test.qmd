@@ -1,0 +1,26 @@
+---
+title: "modeling"
+format: html
+editor: visual
+---
+
+## Quantitative Histories Workshop 
+
+The Quantitative Histories Workshop is a community-centered research and learning lab. Our interdisciplinary work engages multiple frameworks and disciplines; in our unique model, these intersecting areas of study are always bookended with quantitative reflections on history and futurity. The purpose of quantitative reflections is to make considerations of magnitude, shape, and analysis in the consideration of longstanding injustices. As a result, our work provides space for dynamic and interdisciplinary teams to work alongside one another towards an identified common goal.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
